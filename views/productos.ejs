@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <%- include("./partials/nav.ejs") %>
+    <main>
+      <table>
+        <thead>
+          <td>Nombre producto</td>
+          <td>Precio €</td>
+        </thead>
+        <% if(products.length > 0){ products.forEach(product => { %>
+          <tr>
+            <td><%= product.producto %></td>
+            <td><%= product.precio %></td>
+          </tr>
+          <% }) %> <% } else { %>
+          <tr>
+            <td> - </td>
+            <td> - </td>
+          </tr>
+          <% } %>
+      </table>
+    </main>
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>
